@@ -1,1 +1,6 @@
-// Coloque aqui suas actions
+const defaultAction = (state, actionType) => ({
+  type: actionType,
+  state,
+});
+
+export default defaultAction;
