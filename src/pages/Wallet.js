@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Expense from '../components/Expense';
 
 class Wallet extends React.Component {
   constructor() {
@@ -9,6 +10,12 @@ class Wallet extends React.Component {
       totalExpenses: 0,
       currency: 'BRL ',
     };
+  }
+
+  handleExpenses = (expense) => {
+    this.setState((prevState) => ({
+      totalExpenses: prevState.totalExpenses + Number(expense),
+    }));
   }
 
   render() {
@@ -20,6 +27,7 @@ class Wallet extends React.Component {
           <h2 data-testid="email-field">{userEmail}</h2>
           <h3 data-testid="total-field">{totalExpenses}</h3>
           <h3 data-testid="header-currency-field">{currency}</h3>
+          <Expense handleExpenses={ this.handleExpenses } />
         </header>
       </div>
     );
@@ -28,6 +36,7 @@ class Wallet extends React.Component {
 
 const mapStateToProps = (state) => ({
   userEmail: state.user.email,
+  expenses: state.wallet.expenses,
 });
 
 Wallet.propTypes = {
