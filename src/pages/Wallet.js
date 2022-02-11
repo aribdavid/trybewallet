@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Expense from '../components/Expense';
 import Header from '../components/Header';
+import Table from '../components/Table';
 
 class Wallet extends React.Component {
   constructor() {
@@ -25,11 +26,25 @@ class Wallet extends React.Component {
     return (
       <div>
         <header>
-          <h2 data-testid="email-field">{userEmail}</h2>
-          <h3 data-testid="total-field">{totalExpenses}</h3>
-          <h3 data-testid="header-currency-field">{currency}</h3>
-          <Header />
+          <thead>
+            <tr>
+              <th data-testid="email-field">
+                Email:
+                {' '}
+                {userEmail}
+              </th>
+              <th data-testid="total-field">
+                Despesa Total: R$
+                {' '}
+                {totalExpenses}
+                {' '}
+              </th>
+              <th data-testid="header-currency-field">{currency}</th>
+            </tr>
+          </thead>
           <Expense handleExpenses={ this.handleExpenses } />
+          <Header />
+          <Table />
         </header>
       </div>
     );
