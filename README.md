@@ -33,9 +33,9 @@ Neste projeto foi desenvolvido uma carteira de controle de gastos com conversor 
 ## Execute o projeto localmente
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-017-project-trybewallet.git`
+  * `git clone https://github.com/aribdavid/trybewallet`
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-017-project-trybewallet`
+    * `cd trybewallet`
 
 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
